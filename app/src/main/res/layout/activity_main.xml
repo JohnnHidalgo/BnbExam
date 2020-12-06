@@ -8,10 +8,19 @@
     tools:context=".MainActivity">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/imgvBanner"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
-        tools:srcCompat="@tools:sample/avatars" />
+        android:layout_height="148dp"
+        app:srcCompat="@drawable/imagenexamen" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="Lista de Elementos"
+        android:textColor="#00B55A"
+        android:textSize="24dp"
+        android:textStyle="bold"/>
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvElement"

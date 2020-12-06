@@ -26,15 +26,15 @@ public class ElementViewModel extends ViewModel {
     public void getElementsList(){
         Element element = new Element();
         element.setTitle("Caja de ahorro");
-        element.setDescription("ncuentra una caja de ahorro a tu medida para que   puedas ser parte de la mejor banca del país");
+        element.setDescription("Encuentra una caja de ahorro a tu medida para que   puedas ser parte de la mejor banca del país");
         element.setLongDescription("null");
         elementArrayList = new ArrayList<>();
-        userArrayList.add(element);
-        userArrayList.add(element);
-        userArrayList.add(element);
-        userArrayList.add(element);
-        userArrayList.add(element);
-        userArrayList.add(element);
+        elementArrayList.add(element);
+        elementArrayList.add(element);
+        elementArrayList.add(element);
+        elementArrayList.add(element);
+        elementArrayList.add(element);
+        elementArrayList.add(element);
     }
 
 }
