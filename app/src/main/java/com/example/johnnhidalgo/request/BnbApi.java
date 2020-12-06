@@ -7,14 +7,13 @@ import retrofit2.http.Query;
 
 public interface BnbApi {
 
-
-
-
     @POST("/data")
     Call<ElementResponce> getElement(
-           @Query("Title") String Title,
-           @Query("Description") String Description
+            @Query("key") String key,
+            @Query("Title") String Title,
+            @Query("Description") String Description
 
     );
+
 
 }

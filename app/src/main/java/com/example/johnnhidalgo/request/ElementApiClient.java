@@ -52,7 +52,7 @@ public class ElementApiClient {
         @Override
         public void run(){
             try{
-                Response response = getRecipes(query,pageNumber).execute();
+                Response response = getElements(query,pageNumber).execute();
                 if (cancelRequest){
                     return;
                 }
@@ -86,6 +86,8 @@ public class ElementApiClient {
                     String.valueOf(pageNumber)
             );
         }
+
+
 
         private void cancelRequest (){
             cancelRequest = true;
