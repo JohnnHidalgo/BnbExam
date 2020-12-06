@@ -9,6 +9,8 @@ import android.widget.TextView;
 import com.example.johnnhidalgo.R;
 import com.example.johnnhidalgo.model.Element;
 import java.util.ArrayList;
+import java.util.List;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -41,7 +43,11 @@ public class ElementRecyclerViewadapter extends RecyclerView.Adapter<RecyclerVie
 
     @Override
     public int getItemCount() {
-        return elementArrayList.size();
+
+        if(this.elementArrayList != null) {
+            return this.elementArrayList.size();
+        }
+        return 0;
     }
 
 

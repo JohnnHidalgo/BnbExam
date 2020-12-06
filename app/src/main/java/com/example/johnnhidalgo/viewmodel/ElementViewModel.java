@@ -15,56 +15,40 @@ import retrofit2.Response;
 
 public class ElementViewModel extends ViewModel {
 
-    MutableLiveData<ArrayList<Element>> elementLiveData;
+    private MutableLiveData<ArrayList<Element>> elementLiveData;
     ArrayList<Element> elementArrayList;
-    private boolean mIsViewingRecipes;
-    private boolean mIsPerformingQuery;
-
-
-
+    public MutableLiveData<ArrayList<Element>> getElementMutableLiveData(){
+        return elementLiveData;
+    }
     public ElementViewModel (){
         elementLiveData = new MutableLiveData<>();
         init();
     }
-
-
-    public MutableLiveData<ArrayList<Element>> getElementMutableLiveData(){
-        return elementLiveData;
-    }
-
     public void init (){
         getElementsList();
         //makeApiCall();
         elementLiveData.setValue(elementArrayList);
     }
-
     public void makeApiCall(){
         ElementApi elementApi = RetroInstance.getRetroClient().create(ElementApi.class);
         Call<List<Element>> call = elementApi.getElement();
         call.enqueue(new Callback<List<Element>>() {
             @Override
             public void onResponse(Call<List<Element>> call, Response<List<Element>> response) {
-
-                Log.e("DEBUD","response.body().toString()");
-                Log.e("DEBUD",response.body().toString());
-
+                Log.e("--------------", call.toString());
+                Log.e("--------------","response.body().toString()");
+                Log.e("--------------",response.body().toString());
                 elementArrayList = new ArrayList<>();
                 elementArrayList.addAll(response.body());
                 //elementLiveData.postValue(response.body());
             }
-
             @Override
             public void onFailure(Call<List<Element>> call, Throwable t) {
+                Log.e("--------------","response.body().toString()");
                 elementLiveData.postValue(null);
             }
         });
-
     }
-
-    public boolean isViewingElement(){
-        return mIsViewingRecipes;
-    }
-
     public void getElementsList(){
         Element element = new Element();
         element.setTitle("Caja de ahorro");
@@ -77,8 +61,5 @@ public class ElementViewModel extends ViewModel {
         elementArrayList.add(element);
         elementArrayList.add(element);
 //        elementArrayList.add(element);
-
-
     }
-
 }
