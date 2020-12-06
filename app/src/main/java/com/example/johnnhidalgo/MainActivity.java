@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     Observer<ArrayList<Element>> elementListUpdateObserer = new Observer<ArrayList<Element>>() {
+
         @Override
         public void onChanged(ArrayList<Element> elements) {
             elementRecyclerViewadapter = new ElementRecyclerViewadapter(context,elements);
