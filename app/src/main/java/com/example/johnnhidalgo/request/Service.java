@@ -16,7 +16,7 @@ public class Service {
 
     private static BnbApi bnbApi = retrofit.create(BnbApi.class);
 
-    public static BnbApi getRecipeApi(){
+    public static BnbApi getBnbApi(){
         return bnbApi;
     }
 
